@@ -1,0 +1,20 @@
+h2 {
+    font-family: "Comic Sans MS", "Times New Roman", "Arial";
+    font-style: bold;
+    text-align: center;
+}
+
+div {
+    font-family: "Comic Sans MS", "Times New Roman", "Arial";
+    text-align: center;
+}
+
+#yes {
+    color: #60DFE5;
+    font-size: 500%;
+}
+
+#no {
+    color: black;
+    font-size: 750%;
+}
