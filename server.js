@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/", function(req, res) {
   var latitude = req.body.lat;
   var longitude = req.body.lon;
-  var key = "0adbd50f7a0e4896";
+  var key = (process.env.WUNDERAPI || "0adbd50f7a0e4896";
   var wunderURL = "http://api.wunderground.com/api/" + key +
       "/geolookup/conditions/q/" + latitude + "," + longitude + ".json";
 
@@ -21,8 +21,7 @@ app.post("/", function(req, res) {
 
       var weather = parsedData.current_observation.weather;
 
-      if(weather !== "Snow" || "Light Snow" || "Heavy Snow" || "Snow Showers" || "Light Snow Showers" || "Heavy Snow Showers")
-      {
+      if(weather !== "Snow" || "Light Snow" || "Heavy Snow" || "Snow Showers" || "Light Snow Showers" || "Heavy Snow Showers") {
         answer = "No. Go away, dude.";
       } else {
         answer = "Okay!";
